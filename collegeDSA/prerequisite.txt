@@ -1,0 +1,14 @@
+1.variable->declaration/initialisation 
+2.Modifiers or Qualifiers 
+  -> size :- long(just double the size) , short(just half the size);
+             maximum we can only apply two long , only one short is allowed .
+
+  ->sign 
+
+3. Storage clases 
+  -> auto , register , extern , static 
+4. Structur of c program
+5. Fundamental of Data Storage 
+6. Operatos in C .
+7. Type Conversion . 
+8. bitwise compliment ~ . (jab convert kar logai to msb bit ko negative lena ) .    
