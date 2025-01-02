@@ -1,0 +1,156 @@
+### **Edge Cases in Singly Linked List Functions**
+
+Below is a comprehensive list of edge cases for each function in your singly linked list implementation. These cover all scenarios where the code might fail or behave unexpectedly.
+
+---
+
+### **1. `convertArrToSLL`**
+**Description:** Converts an array to a singly linked list.
+
+- **Edge Cases:**
+  1. Input array is empty (`arr.size() == 0`).
+     - Should return `nullptr`.
+  2. Input array has only one element.
+     - Ensure the single node is created correctly.
+
+---
+
+### **2. `insertAtHead`**
+**Description:** Inserts a new node at the head of the list.
+
+- **Edge Cases:**
+  1. List is empty (`head == nullptr`).
+     - Should create a new node and set it as the head.
+  2. General insertion works correctly when the list has multiple nodes.
+
+---
+
+### **3. `insertAtEnd`**
+**Description:** Inserts a new node at the end of the list.
+
+- **Edge Cases:**
+  1. List is empty (`head == nullptr`).
+     - Should create a new node and set it as the head.
+  2. List has only one node.
+     - Should correctly update the `next` pointer of the head.
+  3. General insertion works correctly when the list has multiple nodes.
+
+---
+
+### **4. `insertAtK`**
+**Description:** Inserts a new node at the `k`-th position.
+
+- **Edge Cases:**
+  1. List is empty (`head == nullptr`).
+     - Should behave like `insertAtHead` if `k == 1`.
+     - Should return the unchanged list for `k > 1`.
+  2. `k == 1`.
+     - Should behave like `insertAtHead`.
+  3. `k` is greater than the length of the list.
+     - Should return the unchanged list.
+  4. `k == length + 1` (inserting at the end).
+     - Should correctly append the node at the end.
+
+---
+
+### **5. `insertAtValue`**
+**Description:** Inserts a new node after the first node with the given value.
+
+- **Edge Cases:**
+  1. List is empty (`head == nullptr`).
+     - Should return the unchanged list.
+  2. Value is not present in the list.
+     - Should return the unchanged list.
+  3. Value is found at the last node.
+     - Should correctly append the new node after the last node.
+  4. List has only one node, and its value matches.
+     - Should correctly insert after the head.
+
+---
+
+### **6. `deleteHead`**
+**Description:** Deletes the head node of the list.
+
+- **Edge Cases:**
+  1. List is empty (`head == nullptr`).
+     - Should return `nullptr` without crashing.
+  2. List has only one node.
+     - Should correctly delete the head and return `nullptr`.
+  3. General case with multiple nodes.
+     - Should correctly update `head` to the second node.
+
+---
+
+### **7. `deleteTail`**
+**Description:** Deletes the tail node of the list.
+
+- **Edge Cases:**
+  1. List is empty (`head == nullptr`).
+     - Should return `nullptr` without crashing.
+  2. List has only one node.
+     - Should correctly delete the tail and return `nullptr`.
+  3. General case with multiple nodes.
+     - Should correctly update the second-to-last node's `next` pointer to `nullptr`.
+
+---
+
+### **8. `deleteAtKth`**
+**Description:** Deletes the `k`-th node in the list.
+
+- **Edge Cases:**
+  1. List is empty (`head == nullptr`).
+     - Should return `nullptr` without crashing.
+  2. `k == 1`.
+     - Should behave like `deleteHead`.
+  3. `k` is greater than the length of the list.
+     - Should return the unchanged list.
+  4. General case where the node exists.
+     - Should correctly update pointers and delete the node.
+
+---
+
+### **9. `deleteAtValue`**
+**Description:** Deletes the first node with the given value.
+
+- **Edge Cases:**
+  1. List is empty (`head == nullptr`).
+     - Should return `nullptr` without crashing.
+  2. Value is not present in the list.
+     - Should return the unchanged list without crashing.
+  3. Value is found at the head node.
+     - Should behave like `deleteHead`.
+  4. Value is found at the last node.
+     - Should correctly update the second-to-last node's `next` pointer to `nullptr`.
+  5. General case where the node exists in the middle.
+     - Should correctly update pointers and delete the node.
+
+---
+
+### **10. `traverseSLL`**
+**Description:** Traverses and prints the list.
+
+- **Edge Cases:**
+  1. List is empty (`head == nullptr`).
+     - Should handle gracefully without printing invalid data.
+  2. List has only one node.
+     - Should print the single node's data correctly.
+  3. General case with multiple nodes.
+     - Should correctly traverse and print all nodes.
+
+---
+
+### **General Improvements:**
+- **Null Pointer Safety:**
+  Always check pointers (e.g., `temp` and `temp->next`) before dereferencing to avoid segmentation faults.
+  
+- **Memory Management:**
+  Ensure that dynamically allocated nodes are properly freed (`delete` in C++ instead of `free`).
+
+- **Functionality Tests:**
+  Test each function with:
+  - Empty list.
+  - Single-node list.
+  - Multi-node list.
+  - Invalid inputs (e.g., `k > length` or non-existent `val`).
+
+This structured list will help you revise and test all critical scenarios for your singly linked list implementation. Let me know if you'd like further clarification!
